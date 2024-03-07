@@ -1,4 +1,4 @@
-package com.targetindia.programs;
+package com.targetindia.day_1;
 
 import java.util.Scanner;
 

@@ -1,6 +1,4 @@
-package com.targetindia.programs;
-
-import java.util.Scanner;
+package com.targetindia.day_1;
 
 public class assignment_2 {
     public static String inWords(int num) {
