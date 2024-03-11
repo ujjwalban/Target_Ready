@@ -1,0 +1,4 @@
+[ERROR] 2024-03-10 21:03:21,378 com.targetindia.day_3.programs.assignment_1.CustomerDatabase com.targetindia.day_3.exceptions.InvalidEmailException: Email is not valid
+[ERROR] 2024-03-10 21:10:53,537 com.targetindia.day_3.programs.assignment_1.CustomerDatabase com.targetindia.day_3.exceptions.InvalidEmailException: Email is not valid
+[ERROR] 2024-03-10 21:11:05,932 com.targetindia.day_3.programs.assignment_1.CustomerDatabase java.lang.NumberFormatException: For input string: "`"
+[ERROR] 2024-03-10 21:11:20,016 com.targetindia.day_3.programs.assignment_1.CustomerDatabase com.targetindia.day_3.exceptions.InvalidPhoneException: Invalid Phone Number
