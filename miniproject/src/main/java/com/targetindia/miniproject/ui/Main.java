@@ -57,7 +57,16 @@ public class Main {
                     addNewCustomerData();
                     break;
                 case 3:
-                    searchAndDisplayCustomer();
+                    searchAndDisplayCustomerById();
+                    break;
+                case 4:
+                    searchAndDisplayCustomerByEmail();
+                     break;
+                case 5:
+                    searchAndDisplayCustomerByPhone();
+                    break;
+                case 6:
+                    searchAndDisplayCustomersByCity();
                     break;
                 default:
                     System.out.println("Invalid choice. Please retry.");
@@ -65,8 +74,82 @@ public class Main {
         }
     }
 
-    void searchAndDisplayCustomer() {
-        System.out.println("searching for customer..");
+    void searchAndDisplayCustomerById() {
+        Integer id = KeyboardUtil.getInt("ID: ");
+        try {
+            var c = cm.getCustomerById(id);
+            System.out.printf("%4s|%-20s|%-15s|%-25s|%-15s\n", "ID", "Name", "City", "Email", "Phone");
+            System.out.println("-----------------------------------------------------------------------------------");
+            System.out.printf("%4d|%-20s|%-15s|%-25s|%-15s\n",
+                    c.getId(),
+                    c.getName(),
+                    c.getCity(),
+                    c.getEmail(),
+                    c.getPhone());
+            System.out.println("-----------------------------------------------------------------------------------");
+        } catch (ServiceException e) {
+            log.warn("Error while fetching the user with id: "+id);
+        }
+    }
+
+    void searchAndDisplayCustomerByPhone() {
+        String phone = KeyboardUtil.getString("Phone: ");
+        try {
+            var c = cm.getCustomerByPhone(phone);
+            System.out.printf("%4s|%-20s|%-15s|%-25s|%-15s\n", "ID", "Name", "City", "Email", "Phone");
+            System.out.println("-----------------------------------------------------------------------------------");
+            System.out.printf("%4d|%-20s|%-15s|%-25s|%-15s\n",
+                    c.getId(),
+                    c.getName(),
+                    c.getCity(),
+                    c.getEmail(),
+                    c.getPhone());
+            System.out.println("-----------------------------------------------------------------------------------");
+        } catch (ServiceException e) {
+            log.warn("Error while fetching the user with phone: "+phone);
+            System.out.println("Please Check the logs");
+        }
+    }
+
+    void searchAndDisplayCustomerByEmail() {
+        String email = KeyboardUtil.getString("Email: ");
+        try {
+            var c = cm.getCustomerByEmail(email);
+            System.out.printf("%4s|%-20s|%-15s|%-25s|%-15s\n", "ID", "Name", "City", "Email", "Phone");
+            System.out.println("-----------------------------------------------------------------------------------");
+            System.out.printf("%4d|%-20s|%-15s|%-25s|%-15s\n",
+                    c.getId(),
+                    c.getName(),
+                    c.getCity(),
+                    c.getEmail(),
+                    c.getPhone());
+            System.out.println("-----------------------------------------------------------------------------------");
+        } catch (ServiceException e) {
+            log.warn("Error while fetching the user with email: "+email);
+            System.out.println("Please Check the logs");
+        }
+    }
+
+    void searchAndDisplayCustomersByCity() {
+
+        String city = KeyboardUtil.getString("City: ");
+        try {
+            var customers = cm.getCustomerByCity(city);
+            System.out.printf("%4s|%-20s|%-15s|%-25s|%-15s\n", "ID", "Name", "City", "Email", "Phone");
+            System.out.println("-----------------------------------------------------------------------------------");
+            for(Customer c:customers) {
+                System.out.printf("%4d|%-20s|%-15s|%-25s|%-15s\n",
+                        c.getId(),
+                        c.getName(),
+                        c.getCity(),
+                        c.getEmail(),
+                        c.getPhone());
+            }
+            System.out.println("-----------------------------------------------------------------------------------");
+        } catch (ServiceException e) {
+            log.warn("Error while fetching the user with email: "+city);
+            System.out.println("Please Check the logs");
+        }
     }
 
     void addNewCustomerData() {

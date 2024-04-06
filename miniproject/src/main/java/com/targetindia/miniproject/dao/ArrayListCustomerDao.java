@@ -17,37 +17,33 @@ public class ArrayListCustomerDao implements CustomerDao {
 
     @Override
     public Customer save(Customer customer) throws DaoException {
-//        int maxId = 0;
-//        for (Customer c : customers) {
-//            if (c.getId() > maxId) {
-//                maxId = c.getId();
-//            }
-//        }
-//        maxId++;
-        int maxId = customers // list of customers
-                .stream() // stream of customers
-                .map(c -> c.getId()) // stream of integers (ids)
-                .max(Integer::compareTo)
-                .get() + 1;
+        try {
+            int maxId = customers
+                    .stream()
+                    .map(c -> c.getId())
+                    .max(Integer::compareTo)
+                    .get() + 1;
 
-        customer.setId(maxId);
-        customers.add(customer);
+            customer.setId(maxId);
+            customers.add(customer);
 
-        return customer;
+            return customer;
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 
     @Override
     public Customer getById(int id) throws DaoException {
-//        for (Customer c : customers) {
-//            if (c.getId() == id) {
-//                return c;
-//            }
-//        }
-        return customers
-                .stream()
-                .filter(c -> c.getId() == id)
-                .findFirst()
-                .orElse(null);
+        try {
+            return customers
+                    .stream()
+                    .filter(c -> c.getId() == id)
+                    .findFirst()
+                    .orElse(null);
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 
     @Override
@@ -82,32 +78,48 @@ public class ArrayListCustomerDao implements CustomerDao {
 
     @Override
     public List<Customer> getAll() throws DaoException {
-        return this.customers;
+        try {
+            return this.customers;
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 
     @Override
     public Customer getByEmail(String email) throws DaoException {
-        return customers
-                .stream()
-                .filter(c -> c.getEmail().equals(email))
-                .findFirst()
-                .orElse(null);
+        try {
+            return customers
+                    .stream()
+                    .filter(c -> c.getEmail().equals(email))
+                    .findFirst()
+                    .orElse(null);
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 
     @Override
     public Customer getByPhone(String phone) throws DaoException {
-        return customers
-                .stream()
-                .filter(c -> c.getPhone().equals(phone))
-                .findFirst()
-                .orElse(null);
+        try {
+            return customers
+                    .stream()
+                    .filter(c -> c.getPhone().equals(phone))
+                    .findFirst()
+                    .orElse(null);
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 
     @Override
     public List<Customer> getByCity(String city) throws DaoException {
-        return customers
-                .stream()
-                .filter(c -> c.getCity().equals(city))
-                .toList();
+        try {
+            return customers
+                    .stream()
+                    .filter(c -> c.getCity().equals(city))
+                    .toList();
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 }

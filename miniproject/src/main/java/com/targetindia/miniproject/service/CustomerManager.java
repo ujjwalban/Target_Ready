@@ -46,4 +46,33 @@ public class CustomerManager {
             throw new ServiceException(e);
         }
     }
+
+    public Customer getCustomerById(Integer id) throws ServiceException {
+        try {
+            return dao.getById(id);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+    public Customer getCustomerByEmail(String email) throws ServiceException {
+        try {
+            return dao.getByEmail(email);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+    public Customer getCustomerByPhone(String phone) throws ServiceException {
+        try {
+            return dao.getByPhone(phone);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+    public List<Customer> getCustomerByCity(String city) throws ServiceException {
+        try {
+            return dao.getByCity(city);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }
