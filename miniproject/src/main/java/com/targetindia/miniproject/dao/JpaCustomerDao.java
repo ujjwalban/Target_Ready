@@ -28,7 +28,20 @@ public class JpaCustomerDao implements CustomerDao {
 
     @Override
     public Customer getById(int id) throws DaoException {
-        return null;
+        try {
+            var em = JpaUtil.createEntityManager();
+            Customer customer = em.find(Customer.class,id);
+            em.close();
+            if(customer==null){
+                System.out.println("NO Customer found with that ID");
+                return null;
+            }
+            else {
+                return customer;
+            }
+        } catch (Exception e) {
+            throw new DaoException(e);
+        }
     }
 
     @Override
