@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Day-20/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Day-20/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/JPA-Association/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/JPA-Association/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mockito/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mockito/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mockito/workspace/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Mockito/workspace/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Test-Driven-Development/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Test-Driven-Development/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/miniproject/src/main/java" charset="UTF-8" />

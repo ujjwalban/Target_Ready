@@ -11,6 +11,8 @@
     <modules>
         <module>miniproject</module>
         <module>Test-Driven-Development</module>
+        <module>JPA-Associations</module>
+        <module>JPA-Basics</module>
     </modules>
 
     <properties>
