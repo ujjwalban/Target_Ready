@@ -9,7 +9,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/DSA/pom.xml" />
         <option value="$PROJECT_DIR$/Day-20/pom.xml" />
+        <option value="$PROJECT_DIR$/Mockito/pom.xml" />
         <option value="$PROJECT_DIR$/Mockito/workspace/pom.xml" />
       </set>
     </option>
